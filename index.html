@@ -1,0 +1,383 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+
+  <!-- Tailwind CDN (quick start) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Small custom styles -->
+  <style>
+    /* fix for fixed header space */
+    body { padding-top: 76px; }
+    /* simple fade in helper for users who want no-JS fallback */
+    .js-only { opacity: 0; transform: translateY(8px); }
+  </style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-40 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="text-xl font-bold">Ayyan U-l Haq <span class="text-indigo-600">.</span></a>
+
+      <nav id="nav" class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#home" class="hover:text-indigo-600">Home</a>
+        <a href="#about" class="hover:text-indigo-600">About</a>
+        <a href="#skills" class="hover:text-indigo-600">Skills</a>
+        <a href="#projects" class="hover:text-indigo-600">Projects</a>
+        <a href="#contact" class="hover:text-indigo-600">Contact</a>
+        <a href="#resume" class="ml-4 bg-indigo-600 text-white px-3 py-2 rounded-md">Resume</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button id="openResume" class="hidden md:inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 px-3 py-2 rounded-md">Download CV</button>
+        <button id="menuBtn" aria-expanded="false" class="md:hidden text-2xl">☰</button>
+      </div>
+    </div>
+
+    <!-- mobile nav -->
+    <div id="mobileNav" class="md:hidden hidden border-t border-slate-100">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="#home" class="block">Home</a>
+        <a href="#about" class="block">About</a>
+        <a href="#skills" class="block">Skills</a>
+        <a href="#projects" class="block">Projects</a>
+        <a href="#contact" class="block">Contact</a>
+        <a href="#resume" class="block font-semibold text-indigo-600">Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="min-h-[74vh] flex items-center">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-sm text-indigo-600 font-semibold mb-4">Hello — I build modern websites</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">I'm <span class="text-indigo-600">Your Name</span><br/>Front-end Developer & Designer</h1>
+        <p class="text-slate-600 mb-6">I create beautiful, fast and accessible websites using HTML, CSS, JavaScript and modern tools like Tailwind and React. Here are some of my latest projects — feel free to get in touch.</p>
+
+        <div class="flex gap-4 items-center">
+          <a href="#projects" class="bg-indigo-600 text-white px-5 py-3 rounded-md font-semibold shadow hover:opacity-95">See Projects</a>
+          <button id="copyEmail" class="border border-slate-200 px-4 py-3 rounded-md text-sm">Copy Email</button>
+          <a href="#contact" class="text-sm text-slate-500 hover:text-indigo-600">Or contact me</a>
+        </div>
+
+        <div class="mt-8 flex items-center gap-4 text-sm text-slate-500">
+          <div class="flex items-center gap-2">
+            <strong class="text-slate-800">Location</strong>
+            <span>• Pakistan</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <strong class="text-slate-800">Availability</strong>
+            <span>• Freelance / Full-time</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden md:block">
+        <div class="rounded-2xl overflow-hidden shadow-lg">
+          <img src="https://pbs.twimg.com/profile_images/1972823460041592832/EBP3gQMj_400x400.jpg" alt="profile" class="w-full h-96 object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-16 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8 items-center">
+        <div class="md:col-span-2">
+          <h2 class="text-2xl font-bold mb-4">About Me</h2>
+          <p class="text-slate-600 mb-4">I’m a web developer who loves building polished UI and delightful user experiences. I focus on performance, accessibility and clean code. I enjoy turning ideas into real products.</p>
+          <ul class="grid sm:grid-cols-2 gap-3 text-slate-600">
+            <li>• 3+ years building websites</li>
+            <li>• Front-end (HTML/CSS/JS, React, Tailwind)</li>
+            <li>• Experience with Figma & UI design</li>
+            <li>• Interested in animation & UX</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow">
+          <h3 class="text-lg font-semibold mb-2">Quick Info</h3>
+          <div class="text-sm text-slate-600 space-y-2">
+            <div><strong>Phone:</strong> +92 3XX-XXXXXXX</div>
+            <div><strong>Email:</strong> <span id="emailText">youremail@example.com</span></div>
+            <div><strong>Resume:</strong> <a href="#resume" class="text-indigo-600">Download</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-2xl font-bold mb-6">Skills</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="bg-white p-4 rounded-xl shadow">
+          <h4 class="font-semibold mb-2">HTML & CSS</h4>
+          <div class="text-sm text-slate-500">Semantic markup, responsive layouts</div>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow">
+          <h4 class="font-semibold mb-2">JavaScript</h4>
+          <div class="text-sm text-slate-500">DOM, fetch, ES6+</div>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow">
+          <h4 class="font-semibold mb-2">Tailwind / UI</h4>
+          <div class="text-sm text-slate-500">Design systems & components</div>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow">
+          <h4 class="font-semibold mb-2">React</h4>
+          <div class="text-sm text-slate-500">SPAs, component design</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-16 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold">Selected Projects</h2>
+        <a href="#" class="text-indigo-600">View all on GitHub →</a>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project card (repeat/edit) -->
+        <article class="bg-white rounded-2xl overflow-hidden shadow group">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Project 1" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="p-5">
+            <h3 class="font-semibold">Portfolio Website</h3>
+            <p class="text-sm text-slate-500 mt-1">A responsive portfolio built with Tailwind CSS & vanilla JS.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-sm text-indigo-600 font-semibold">$—</div>
+              <div class="flex gap-2">
+                <button onclick="openProjectModal('Portfolio Website','This is a responsive portfolio I built using Tailwind and JS.','https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80')" class="px-3 py-2 border rounded text-sm">Details</button>
+                <a href="#" class="px-3 py-2 bg-indigo-600 text-white rounded text-sm">Live</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-2xl overflow-hidden shadow group">
+          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80" alt="Project 2" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="p-5">
+            <h3 class="font-semibold">E-commerce Demo</h3>
+            <p class="text-sm text-slate-500 mt-1">Static shop with demo cart and checkout flow.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-sm text-indigo-600 font-semibold">—</div>
+              <div class="flex gap-2">
+                <button onclick="openProjectModal('E-commerce Demo','A static e-commerce demo with client-side cart and checkout placeholder.','https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80')" class="px-3 py-2 border rounded text-sm">Details</button>
+                <a href="#" class="px-3 py-2 bg-indigo-600 text-white rounded text-sm">Live</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-2xl overflow-hidden shadow group">
+          <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1200&q=80" alt="Project 3" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="p-5">
+            <h3 class="font-semibold">Weather App</h3>
+            <p class="text-sm text-slate-500 mt-1">API-powered app showing weather data.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-sm text-indigo-600 font-semibold">—</div>
+              <div class="flex gap-2">
+                <button onclick="openProjectModal('Weather App','Built with fetch and OpenWeather API.','https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1200&q=80')" class="px-3 py-2 border rounded text-sm">Details</button>
+                <a href="#" class="px-3 py-2 bg-indigo-600 text-white rounded text-sm">Live</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
+      <p class="text-slate-600 mb-6">Interested in working together? Send a message and I’ll reply soon.</p>
+
+      <!-- Static demo form (replace action with Formspree / Netlify / backend) -->
+      <form id="contactForm" class="space-y-4 bg-white p-6 rounded-xl shadow">
+        <div>
+          <label class="block text-sm font-medium mb-1">Name</label>
+          <input name="name" class="w-full border rounded px-3 py-2" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Email</label>
+          <input name="email" type="email" class="w-full border rounded px-3 py-2" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Message</label>
+          <textarea name="message" rows="5" class="w-full border rounded px-3 py-2" required></textarea>
+        </div>
+        <div class="flex items-center gap-3">
+          <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-md">Send Message</button>
+          <div id="formMsg" class="text-sm text-slate-500"></div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- RESUME SECTION (anchor target) -->
+  <section id="resume" class="py-12 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h3 class="text-xl font-bold mb-3">Download Resume</h3>
+      <p class="text-slate-600 mb-6">Click below to download my CV (PDF).</p>
+      <!-- Replace # with actual resume path or GitHub raw file -->
+      <a id="resumeLink" href="#" download="YourName-Resume.pdf" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-md">Download CV</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 bg-white border-t border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-slate-500">© <span id="year"></span> Your Name — Built with ❤️</p>
+      <div class="flex gap-4">
+        <a href="#" class="text-slate-500 hover:text-indigo-600">GitHub</a>
+        <a href="#" class="text-slate-500 hover:text-indigo-600">LinkedIn</a>
+        <a href="#" class="text-slate-500 hover:text-indigo-600">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROJECT MODAL -->
+  <div id="projectModal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-xl max-w-3xl w-full mx-4 overflow-hidden shadow-lg">
+      <div class="p-4 border-b flex items-start justify-between">
+        <h4 id="pm-title" class="text-xl font-bold"></h4>
+        <button onclick="closeProjectModal()" class="text-slate-600">Close</button>
+      </div>
+      <div class="p-4 md:flex gap-6">
+        <img id="pm-img" src="" alt="" class="w-full md:w-1/3 h-48 object-cover rounded-lg">
+        <div>
+          <p id="pm-desc" class="text-slate-600"></p>
+          <div class="mt-4">
+            <a href="#" class="bg-indigo-600 text-white px-4 py-2 rounded-md">View Live</a>
+            <a href="#" class="ml-2 border px-4 py-2 rounded-md">View Code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS: interactivity (no build tools required) -->
+  <script>
+    // small utilities & init
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile nav
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    menuBtn.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      mobileNav.classList.toggle('hidden');
+    });
+
+    // smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if (href === '#' || href === '') return;
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (!target) return;
+        // header offset
+        const header = document.querySelector('header');
+        const offset = header ? header.offsetHeight + 8 : 0;
+        const rect = target.getBoundingClientRect();
+        const top = window.pageYOffset + rect.top - offset;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+        // close mobile nav if open
+        if (!mobileNav.classList.contains('hidden')) mobileNav.classList.add('hidden');
+      });
+    });
+
+    // fade-in on scroll (IntersectionObserver)
+    (function () {
+      const items = document.querySelectorAll('section, article, .bg-white');
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('js-only');
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'none';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(i => {
+        i.classList.add('js-only');
+        io.observe(i);
+      });
+    })();
+
+    // copy email button
+    document.getElementById('copyEmail').addEventListener('click', async () => {
+      const email = document.getElementById('emailText').textContent.trim();
+      try {
+        await navigator.clipboard.writeText(email);
+        alert('Email copied: ' + email);
+      } catch (e) {
+        alert('Copy failed — email: ' + email);
+      }
+    });
+
+    // contact form (demo — replace with Formspree/Netlify or backend)
+    const contactForm = document.getElementById('contactForm');
+    const formMsg = document.getElementById('formMsg');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // simple demo response
+      formMsg.textContent = 'Sending…';
+      setTimeout(() => {
+        formMsg.textContent = 'Message sent (demo). I will reply soon!';
+        contactForm.reset();
+      }, 900);
+    });
+
+    // quick "download resume" button — replace href with actual PDF path
+    document.getElementById('openResume').addEventListener('click', () => {
+      const link = document.getElementById('resumeLink');
+      const href = link.getAttribute('href') || '#';
+      if (href === '#') {
+        alert('Add your resume PDF file and update the Download link.');
+      } else {
+        window.open(href, '_blank');
+      }
+    });
+
+    // project modal
+    const pm = document.getElementById('projectModal');
+    const pmTitle = document.getElementById('pm-title');
+    const pmDesc = document.getElementById('pm-desc');
+    const pmImg = document.getElementById('pm-img');
+    function openProjectModal(title, desc, img) {
+      pmTitle.textContent = title;
+      pmDesc.textContent = desc;
+      pmImg.src = img;
+      pm.classList.remove('hidden');
+      pm.classList.add('flex');
+    }
+    function closeProjectModal() {
+      pm.classList.add('hidden');
+      pm.classList.remove('flex');
+    }
+    window.openProjectModal = openProjectModal;
+    window.closeProjectModal = closeProjectModal;
+
+    // small accessibility: close modal with ESC
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        if (!pm.classList.contains('hidden')) closeProjectModal();
+      }
+    });
+  </script>
+</body>
+</html>
